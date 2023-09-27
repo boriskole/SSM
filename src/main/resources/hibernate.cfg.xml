@@ -6,6 +6,8 @@
 
 	<session-factory>
 
+		<mapping class="nl.delphinity.ssm.domain.Account"/>
+
 	</session-factory>
 
 </hibernate-configuration>
