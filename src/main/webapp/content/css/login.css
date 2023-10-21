@@ -1,0 +1,40 @@
+.box {
+    border-radius: 25px;
+    box-shadow: 0 0 10px #ffffff95;
+}
+
+.form-control {
+    border: none;
+    background: none;
+}
+
+input, label {
+    font-family: var(--poppins-font) !important;
+    font-weight: 400;
+}
+
+.form-header {
+    font-family: var(--poppins-font);
+    font-weight: 500;
+}
+
+.form-control:hover, .form-control, .form-control:active, .form-control:focus {
+    box-shadow: none;
+    background: none;
+}
+
+.submit-btn {
+    color: #fff;
+    background: #131313;
+    font-family: var(--poppins-font);
+    font-weight: 500;
+    border-radius: 15px;
+    transition: all 0.2s;
+}
+.submit-btn:hover {
+    color: #fff;
+    background: #282828;
+    font-family: var(--poppins-font);
+    font-weight: 500;
+    border-radius: 15px;
+}

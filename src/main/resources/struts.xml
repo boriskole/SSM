@@ -8,7 +8,13 @@
 
 	<package name="default" extends="struts-default" namespace="/">
 
+		<action name="">
+			<result type="redirect">login</result>
+		</action>
 
+		<action name="login">
+			<result>content/page/auth/login.jsp</result>
+		</action>
 
 	</package>
 
