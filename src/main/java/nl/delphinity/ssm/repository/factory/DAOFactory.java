@@ -1,6 +1,6 @@
 package nl.delphinity.ssm.repository.factory;
 
-import nl.delphinity.ssm.repository.interfaces.IAccountDAO;
+import nl.delphinity.ssm.repository.interfaces.*;
 
 public abstract class DAOFactory {
 
@@ -20,5 +20,9 @@ public abstract class DAOFactory {
     }
 
     public abstract IAccountDAO getAccountDAO();
+    public abstract IPersoonDAO getPersoonDAO();
+    public abstract IKlantDAO getKlantDAO();
+    public abstract IBestellingDAO getBestellingDAO();
+    public abstract IBeheerderDAO getBeheerderDAO();
 
 }

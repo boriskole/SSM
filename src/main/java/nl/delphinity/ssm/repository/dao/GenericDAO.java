@@ -99,11 +99,11 @@ public class GenericDAO<T, ID extends Serializable> implements IGenericDAO<T, ID
     }
 
     @Override
-    public Optional<T> findById(ID id) {
+    public T findById(ID id) {
         getSession().beginTransaction();
         T entity = 	getSession().find(getPersistentClass(), id);
         getSession().getTransaction().commit();
-        return Optional.of(entity);
+        return entity;
     }
 
     @Override

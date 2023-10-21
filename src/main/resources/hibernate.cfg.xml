@@ -7,6 +7,10 @@
 	<session-factory>
 
 		<mapping class="nl.delphinity.ssm.domain.Account"/>
+		<mapping class="nl.delphinity.ssm.domain.Persoon"/>
+		<mapping class="nl.delphinity.ssm.domain.Klant"/>
+		<mapping class="nl.delphinity.ssm.domain.Bestelling"/>
+		<mapping class="nl.delphinity.ssm.domain.Beheerder"/>
 
 	</session-factory>
 

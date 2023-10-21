@@ -21,30 +21,20 @@ public class Account {
     @Column(nullable = false)
     private String wachtwoord;
 
-    @Column(nullable = false)
-    private Integer machtigingen;
-
-    @CreationTimestamp
-    @Column(nullable = false)
-    private LocalDateTime aanmaakDatum;
-
-    @UpdateTimestamp
-    @Column(nullable = false)
-    private LocalDateTime wijzigDatum;
+    @OneToOne
+    private Persoon persoon;
 
     public Account() { }
 
-    public Account(Long id, String email, String wachtwoord, Integer machtigingen) {
+    public Account(Long id, String email, String wachtwoord) {
         this.id = id;
         this.email = email;
         this.wachtwoord = wachtwoord;
-        this.machtigingen = machtigingen;
     }
 
-    public Account(String email, String wachtwoord, Integer machtigingen) {
+    public Account(String email, String wachtwoord) {
         this.email = email;
         this.wachtwoord = wachtwoord;
-        this.machtigingen = machtigingen;
     }
 
     public Long getId() {
@@ -71,28 +61,12 @@ public class Account {
         this.wachtwoord = wachtwoord;
     }
 
-    public LocalDateTime getAanmaakDatum() {
-        return aanmaakDatum;
+    public Persoon getPersoon() {
+        return persoon;
     }
 
-    public void setAanmaakDatum(LocalDateTime aanmaakDatum) {
-        this.aanmaakDatum = aanmaakDatum;
-    }
-
-    public LocalDateTime getWijzigDatum() {
-        return wijzigDatum;
-    }
-
-    public void setWijzigDatum(LocalDateTime wijzigDatum) {
-        this.wijzigDatum = wijzigDatum;
-    }
-
-    public Integer getMachtigingen() {
-        return machtigingen;
-    }
-
-    public void setMachtigingen(Integer machtigingen) {
-        this.machtigingen = machtigingen;
+    public void setPersoon(Persoon persoon) {
+        this.persoon = persoon;
     }
 
     @Override
@@ -123,12 +97,11 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account [id=" + id
-                + ", email=" + email
-                + ", wachtwoord=" + wachtwoord
-                + ", aanmaakDatum=" + aanmaakDatum
-                + ", wijzigDatum=" + wijzigDatum
-                + "]";
+        return "Account{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", wachtwoord='" + wachtwoord + '\'' +
+                '}';
     }
 
 }

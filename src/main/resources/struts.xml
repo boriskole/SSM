@@ -8,6 +8,8 @@
 
 	<package name="default" extends="struts-default" namespace="/">
 
+
+
 	</package>
 
 </struts>	
