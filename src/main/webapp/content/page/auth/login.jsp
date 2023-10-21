@@ -30,8 +30,8 @@
                         </div>
 
                         <div class="form-floating mt-1">
-                            <input type="password" name="password" id="password" placeholder="Wachtwoord" class="form-control">
-                            <label for="password" class="col-form-label form-label-group">Wachtwoord</label>
+                            <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Wachtwoord" class="form-control">
+                            <label for="wachtwoord" class="col-form-label form-label-group">Wachtwoord</label>
                         </div>
 
                         <input type="submit" value="Inloggen" class="submit-btn form-control my-3 py-3">
