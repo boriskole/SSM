@@ -31,7 +31,16 @@ input, label {
     border-radius: 15px;
     transition: all 0.2s;
 }
+
 .submit-btn:hover {
+    color: #fff;
+    background: #282828;
+    font-family: var(--poppins-font);
+    font-weight: 500;
+    border-radius: 15px;
+}
+
+.submit-btn:focus {
     color: #fff;
     background: #282828;
     font-family: var(--poppins-font);

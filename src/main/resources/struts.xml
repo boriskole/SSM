@@ -16,6 +16,27 @@
 			<result>content/page/auth/login.jsp</result>
 		</action>
 
+		<action name="doLogin" class="nl.delphinity.ssm.action.auth.LoginAction" method="login">
+			<result type="redirect" name="error">login</result>
+			<result type="redirect" name="wrong">login?fout</result>
+			<result type="redirectAction" name="beheerder">
+				<param name="actionName">home</param>
+				<param name="namespace">beheerder</param>
+			</result>
+			<result type="redirectAction" name="klant">
+				<param name="actionName">home</param>
+				<param name="namespace">klant</param>
+			</result>
+		</action>
+
+	</package>
+
+	<package name="beheerder" namespace="beheerder">
+
+	</package>
+
+	<package name="beheerder" namespace="klant">
+
 	</package>
 
 </struts>	
