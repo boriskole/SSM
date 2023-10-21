@@ -18,15 +18,15 @@
             <div class="row justify-content-center">
                 <div class="col-md-3 box bg-light">
 
-                    <img src="content/img/auth/profile.png" alt="Image of cogwheel" width="250px" class="my-5 img-fluid">
+                    <img src="content/img/auth/profile.png" width="250px" class="my-5 img-fluid" alt="Foto van een persoon">
 
                     <form action="doLogin" method="post">
 
                         <h2 class="form-header">Login</h2>
 
                         <div class="form-floating mt-3">
-                            <input type="text" name="username" id="username" placeholder="Gebruikersnaam" class="form-control">
-                            <label for="username" class="col-form-label form-label-group">Gebruikersnaam</label>
+                            <input type="email" name="email" id="email" placeholder="E-mail" class="form-control">
+                            <label for="email" class="col-form-label form-label-group">E-mail</label>
                         </div>
 
                         <div class="form-floating mt-1">
