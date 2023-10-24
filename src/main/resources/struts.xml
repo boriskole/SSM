@@ -21,22 +21,78 @@
 			<result type="redirect" name="wrong">login?fout</result>
 			<result type="redirectAction" name="beheerder">
 				<param name="actionName">home</param>
-				<param name="namespace">beheerder</param>
+				<param name="namespace">/beheerder</param>
 			</result>
 			<result type="redirectAction" name="klant">
 				<param name="actionName">home</param>
-				<param name="namespace">klant</param>
+				<param name="namespace">/klant</param>
 			</result>
+		</action>
+
+		<action name="logout" class="nl.delphinity.ssm.action.auth.LogoutAction" method="logout">
+			<result type="redirect">login</result>
+		</action>
+
+		<action name="403">
+			<result>content/page/error_pages/403.jsp</result>
 		</action>
 
 	</package>
 
-	<package name="beheerder" namespace="beheerder">
+	<package name="beheerder-package" namespace="/beheerder" extends="struts-default">
+
+		<interceptors>
+
+			<interceptor name="security" class="nl.delphinity.ssm.interceptor.SecurityInterceptor"/>
+
+			<interceptor-stack name="security">
+				<interceptor-ref name="security"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+
+		</interceptors>
+
+		<default-interceptor-ref name="security"/>
+
+		<global-results>
+			<result name="403" type="redirectAction">
+				<param name="actionName">403</param>
+				<param name="namespace">/</param>
+			</result>
+		</global-results>
+
+		<action name="home" class="nl.delphinity.ssm.action.beheerder.HomeAction" method="home">
+			<result>content/page/beheerder/home.jsp</result>
+		</action>
 
 	</package>
 
-	<package name="beheerder" namespace="klant">
+	<package name="klant-package" namespace="/klant" extends="struts-default">
+
+		<interceptors>
+
+			<interceptor name="security" class="nl.delphinity.ssm.interceptor.SecurityInterceptor"/>
+
+			<interceptor-stack name="security">
+				<interceptor-ref name="security"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+
+		</interceptors>
+
+		<default-interceptor-ref name="security"/>
+
+		<global-results>
+			<result name="403" type="redirectAction">
+				<param name="actionName">403</param>
+				<param name="namespace">/</param>
+			</result>
+		</global-results>
+
+		<action name="home" class="nl.delphinity.ssm.action.klant.HomeAction" method="home">
+			<result>content/page/beheerder/home.jsp</result>
+		</action>
 
 	</package>
 
-</struts>	
+</struts>
